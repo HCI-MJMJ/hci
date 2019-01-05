@@ -1,38 +1,42 @@
 <template>
   <v-app>
-    <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
+    <v-toolbar app dark color="primary">
+      <v-toolbar-title class="white--text">Berührungspunkte</v-toolbar-title>
+
       <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
+
+      <v-toolbar-items>
+        <v-btn flat to="/">Startseite</v-btn>
+        <v-btn flat to="/about">Über uns</v-btn>
+      </v-toolbar-items>
     </v-toolbar>
 
     <v-content>
-      <HelloWorld/>
+      <router-view/>
     </v-content>
+
+    <v-footer dark height="auto">
+      <v-card class="flex" flat tile>
+        <v-card-title class="primary">
+          <p class="subheading">Made in Hannover with ❤️</p>
+        </v-card-title>
+
+        <v-card-actions class="grey darken-3 justify-center">&copy;2019 —
+          <p>Berührungspunkte</p>
+        </v-card-actions>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: "App",
+  data() {
+    return {};
   },
-  data () {
-    return {
-      //
-    }
+  beforeMount() {
+    this.$store.dispatch("fetchArticles");
   }
-}
+};
 </script>
