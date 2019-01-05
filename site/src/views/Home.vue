@@ -7,7 +7,7 @@
         <v-card-text class="name">
           {{ item.data.name }}
         </v-card-text>
-        <v-card-text class="int-text" v-for="line in item.data.text.slice(0, 2)">
+        <v-card-text class="card-text" v-for="line in item.data.text.slice(0, 2)">
           {{ line }}
         </v-card-text>
         <v-card-text>
@@ -40,5 +40,10 @@ export default {
   .name {
     font-size: 3em;
     font-family: 'Charm', cursive;
+  }
+
+  .card-text:nth-of-type(even) {
+    font-size: 1.3em;
+    font-weight: 500;
   }
 </style>
