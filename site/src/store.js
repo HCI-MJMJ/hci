@@ -24,7 +24,7 @@ export default new Vuex.Store({
   actions: {
     fetchArticles(context) {
       $.ajax({
-        url: "http://localhost:3000/articles",
+        url: "https://hci-proj.herokuapp.com/articles",
         type: "GET",
         success: data => {
           context.commit("addArticles", {articles: data});
