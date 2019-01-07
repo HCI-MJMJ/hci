@@ -1,7 +1,7 @@
 <template>
 <v-container>
-  <v-layout>
-    <v-flex xs12 sm6 lg4 class="text-xs-center" v-for="item in items" :key="item.id">
+  <v-layout row wrap>
+    <v-flex xs12 sm6 lg4 class="text-xs-center pa-4" v-for="item in items" :key="item.id">
       <v-card>
    
         <v-card-text class="name">
